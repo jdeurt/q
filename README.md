@@ -16,7 +16,7 @@ cargo install --git https://github.com/jdeurt/q
 
 ## Setup
 
-Set your API key:
+Set your ANTHROPIC  API key:
 
 ```sh
 export Q_ANTHROPIC_API_KEY="your-key-here"
@@ -29,6 +29,9 @@ q init
 ```
 
 This adds `?` and `??` functions to your shell. Restart your shell or source your config to activate.
+
+
+also Q have a Python version( currently under development) aim to support Many models APIs (DeepSeek, Gemini , OpenAI etc..)
 
 ## Usage
 
@@ -50,3 +53,4 @@ q --yes <query>
 |---|---|
 | `Q_ANTHROPIC_API_KEY` | API key (required) |
 | `Q_MODEL` | Model override (default: `claude-haiku-4-5`) |
+
