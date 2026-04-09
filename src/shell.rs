@@ -66,6 +66,10 @@ fn shell_snippet(shell: &str) -> String {
             "function ?; q $argv; end\n",
             "function ??; q --yes $argv; end\n",
         ).to_string(),
+        "zsh" => concat!(
+            "function \\? { q \"$@\"; }\n",
+            "function \\?\\? { q --yes \"$@\"; }\n",
+        ).to_string(),
         _ => concat!(
             "?() { q \"$@\"; }\n",
             "??() { q --yes \"$@\"; }\n",
