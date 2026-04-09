@@ -67,8 +67,8 @@ fn shell_snippet(shell: &str) -> String {
             "function ??; q --yes $argv; end\n",
         ).to_string(),
         "zsh" => concat!(
-            "function \\? { q \"$@\"; }\n",
-            "function \\?\\? { q --yes \"$@\"; }\n",
+            "alias '?'='noglob q'\n",
+            "alias '??'='noglob q --yes'\n",
         ).to_string(),
         _ => concat!(
             "?() { q \"$@\"; }\n",
