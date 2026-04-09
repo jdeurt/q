@@ -11,7 +11,7 @@ Run? [y/N]
 ## Installation
 
 ```sh
-cargo install --git https://github.com/juandeurtubey/q
+cargo install --git https://github.com/jdeurt/q
 ```
 
 ## Setup
