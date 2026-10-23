@@ -1,11 +1,23 @@
 mod anthropic;
+mod openai;
 
-use crate::config::Config;
+use crate::config::{Config, Provider};
 use std::env;
 
 pub fn call(config: &Config, query: &str) -> Result<String, String> {
     let system = system_prompt();
-    anthropic::call(config, query, &system)
+    match config.provider {
+        Provider::Anthropic => anthropic::call(config, query, &system),
+        Provider::OpenAI => openai::call(config, query, &system),
+    }
+}
+
+fn command_text(text: String) -> Result<String, String> {
+    if text.trim().is_empty() {
+        Err("No text in response.".into())
+    } else {
+        Ok(text)
+    }
 }
 
 fn system_prompt() -> String {
